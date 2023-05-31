@@ -12,6 +12,12 @@ class UserService {
             createUserData
         }
     }
+
+    findByUserEmail = async(email : string) => {
+        const userInfo = await this.userRepository.userInfoByEmail(email)
+
+        return userInfo
+    }
 }
 
 export default UserService

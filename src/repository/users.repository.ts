@@ -16,6 +16,12 @@ class UserRepository {
         console.log(createUserData)
     }
 
+    userInfoByEmail = async(email : string) => {
+        const userInfo = await prisma.users.findUnique({where : {email}})
+
+        return userInfo
+    }
+
 }
 
 export default UserRepository
