@@ -1,5 +1,6 @@
 const passport = require('passport');
 const kakao = require('./kakaoStrategy');
+const naver = require('./naverStrategy')
 const  {PrismaClient} = require("@prisma/client"); // 카카오서버로 로그인할때
 
 const prisma = new PrismaClient()
@@ -17,5 +18,6 @@ module.exports = () => {
     });
     //
     // local();
-    kakao(); // 구글 전략 등록
+    kakao(); // 카카오 전략 등록
+    naver(); // 네이버 전략 등록
 };

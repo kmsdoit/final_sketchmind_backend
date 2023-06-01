@@ -9,7 +9,8 @@ class UserController {
     createUserController = async(req:Request, res:Response) => {
         const request : User = {
             email : req.body.email,
-            name : req.body.name
+            name : req.body.name,
+            provider : req.body.provider
         }
 
         console.log(request)

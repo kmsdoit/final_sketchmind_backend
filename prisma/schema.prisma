@@ -14,4 +14,7 @@ model Users {
   id Int @id @default(autoincrement())
   email String @unique
   name String?
+  provider String?
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
 }
