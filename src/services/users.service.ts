@@ -17,6 +17,18 @@ class UserService {
 
         return userInfo
     }
+
+    findAllUsers = async() => {
+        const users = await this.userRepository.findAllUser()
+
+        return users
+    }
+
+    updateUserByEmail = async(user : User) => {
+        await this.userRepository.updateUserByEmail(user)
+
+        return null
+    }
 }
 
 export default UserService

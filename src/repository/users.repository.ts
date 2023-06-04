@@ -22,6 +22,25 @@ class UserRepository {
         return userInfo
     }
 
+    findAllUser = async() => {
+        const users = await prisma.users.findMany()
+
+        return users
+    }
+
+    updateUserByEmail = async(user : User) => {
+        const updateUserInfo = await prisma.users.update({
+            where : {
+                email : user.email
+            },
+            data : {
+                ...user
+            }
+        })
+
+        return null
+    }
+
 }
 
 export default UserRepository
