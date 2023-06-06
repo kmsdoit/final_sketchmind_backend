@@ -41,6 +41,16 @@ class UserRepository {
         return null
     }
 
+    deleteUserByEmail = async (email : string) => {
+        await prisma.users.delete({
+            where : {
+                email
+            }
+        })
+
+        return null
+    }
+
 }
 
 export default UserRepository

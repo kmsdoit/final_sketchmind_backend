@@ -29,6 +29,12 @@ class UserService {
 
         return null
     }
+
+    deleteUserByEmail = async (email : string ) => {
+        await this.userRepository.deleteUserByEmail(email)
+
+        return null
+    }
 }
 
 export default UserService

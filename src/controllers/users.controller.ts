@@ -72,7 +72,24 @@ class UserController {
             })
         }catch (e) {
             return res.send({
+                "statusCode" : 400,
+                "message" : e
+            })
+        }
+    }
+
+    deleteUserByEmailController = async (req:Request, res: Response) => {
+        const userEmail : string = req.query.email as string
+
+        try {
+            await this.userService.deleteUserByEmail(userEmail)
+            return res.send({
                 "statusCode" : 200,
+                "message" : "삭제되었습니다"
+            })
+        }catch (e) {
+            return res.send({
+                "statusCode" : 400,
                 "message" : e
             })
         }
