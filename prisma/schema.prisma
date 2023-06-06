@@ -18,3 +18,17 @@ model Users {
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 }
+
+model Profile {
+  id Int @id @default(autoincrement())
+  name String
+  relation String
+  birth String
+  gender String
+  graduation String
+  graduation_status String
+  country String
+  city String
+  occupation String
+  userId Int
+}

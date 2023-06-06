@@ -2,6 +2,8 @@ import express, { Request, Response } from 'express'
 import router  from './routers/router'
 import userRouter from './routers/users.route'
 import authRouter from "./routers/auth.route";
+import profileRepository from "./repository/profile.repository";
+import profileRouter from "./routers/profile.route";
 const passportConfig = require('./utils/passport');
 const passport = require('passport')
 const cookieParser = require('cookie-parser')
@@ -38,7 +40,8 @@ class App {
     private routerGroup() : void {
         this.app.use('/api/health', router);
         this.app.use('/api/user', userRouter);
-        this.app.use('/api/auth', authRouter)
+        this.app.use('/api/auth', authRouter);
+        this.app.use('/api/profile', profileRouter)
         this.app.listen(3000, () => {
             console.log("started server with 3000")
         })

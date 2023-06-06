@@ -47,7 +47,6 @@ class UserRepository {
                 email
             }
         })
-
         return null
     }
 
