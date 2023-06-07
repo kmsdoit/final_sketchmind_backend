@@ -34,6 +34,25 @@ class ProfileController {
             })
         }
     }
+
+    getProfileByProfileIdController = async (req:Request, res: Response) => {
+        const profileId : string = req.query.profileId as string
+
+        const profileData = await this.profileService.getProfileByProfileIdService(parseInt(profileId))
+
+        if (profileData !== null) {
+            return res.send({
+                "statusCode" : 200,
+                "message" : "프로필 조회 성공",
+                "data" : profileData
+            })
+        }else {
+            return res.send({
+                "statusCode" : 400,
+                "message" : "해당하는 프로필이 존재하지 않습니다"
+            })
+        }
+    }
 }
 
 export default ProfileController

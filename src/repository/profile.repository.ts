@@ -14,6 +14,16 @@ class ProfileRepository {
 
         return null
     }
+
+    getProfileByProfileId = async (profileId : number) => {
+        const profileData = await prisma.profile.findUnique({
+            where : {
+                id : profileId
+            }
+        })
+
+        return profileData
+    }
 }
 
 export default ProfileRepository

@@ -6,6 +6,6 @@ const profileRouter = express.Router();
 const profileController = new ProfileController()
 
 profileRouter.post('/create',profileController.createProfileByUserIdController)
-
+profileRouter.get('/get', profileController.getProfileByProfileIdController)
 
 export default profileRouter
