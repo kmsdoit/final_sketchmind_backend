@@ -24,6 +24,12 @@ class ProfileRepository {
 
         return profileData
     }
+
+    getAllProfileRepo = async() => {
+        const profileData = await prisma.profile.findMany()
+
+        return profileData
+    }
 }
 
 export default ProfileRepository

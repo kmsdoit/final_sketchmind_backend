@@ -53,6 +53,23 @@ class ProfileController {
             })
         }
     }
+
+    getAllProfileController = async(req:Request, res:Response) => {
+        const profileData = await this.profileService.getAllProfileService()
+
+        if(profileData.length !== 0) {
+            return res.send({
+                "statusCode" : 200,
+                "message" : "모든 프로필을 가져옵니다",
+                "data" : profileData
+            })
+        }else {
+            return res.send({
+                "statusCode" : 400,
+                "message" : "프로필 정보가 존재 하지 않습니다"
+            })
+        }
+    }
 }
 
 export default ProfileController

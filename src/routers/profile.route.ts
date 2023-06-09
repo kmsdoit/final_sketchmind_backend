@@ -7,5 +7,6 @@ const profileController = new ProfileController()
 
 profileRouter.post('/create',profileController.createProfileByUserIdController)
 profileRouter.get('/get', profileController.getProfileByProfileIdController)
+profileRouter.get('/all', profileController.getAllProfileController)
 
 export default profileRouter

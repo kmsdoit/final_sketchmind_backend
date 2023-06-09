@@ -13,6 +13,12 @@ class ProfileService  {
 
         return profileData
     }
+
+    getAllProfileService = async() => {
+        const profileData = await this.profileRepository.getAllProfileRepo()
+
+        return profileData
+    }
 }
 
 export default ProfileService
